@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Phrase } from '../shared/phrase.class';
-import { PhraseService } from '../shared/phrase.service';
+import { Phrase } from '../../shared/phrase.class';
+import { PhraseService } from '../../shared/phrase.service';
 
 
 
@@ -22,7 +22,7 @@ export class PhraseDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.activatedRoute.params.forEach((params: Params) => {
+    this.activatedRoute.params.subscribe((params: Params) => {
       const id = +params.id;
 
       if (isNaN(id)) return;
@@ -35,7 +35,8 @@ export class PhraseDetailsComponent implements OnInit {
 
   }
   gotoPhrasesList() {
-    this.router.navigate(['/phrases']).then();
+    const phraseID = this.phrase ? this.phrase.id : null
+    this.router.navigate(['/phrases', {id: phraseID} ]).then();
   }
 
 }
