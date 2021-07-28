@@ -1,0 +1,13 @@
+<div *ngIf="phrase">
+    <h2>Selected phrase Dedails info</h2>
+
+    <div>ID: {{phrase.id}}</div>
+    <div>Value: {{phrase.value}}</div>
+    <div>Language: {{phrase.language}}</div>
+
+   <div>
+    <button type="button" (click) = "gotoPhrasesList()">
+        Go to phrasesList
+    </button>
+   </div>
+</div>
