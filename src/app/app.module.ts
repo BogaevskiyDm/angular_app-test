@@ -5,16 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PrasesModule } from './prases/prases.module';
+import { AdminModule } from './admin/admin.module';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PrasesModule
+    PrasesModule,
+    AdminModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
