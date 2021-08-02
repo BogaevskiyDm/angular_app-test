@@ -25,18 +25,16 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    console.log('нажами login');
-    this.authService.login(this.userLogin, this.userPassword).then(res => {
+
+    this.authService.login(this.userLogin, this.userPassword).subscribe(res => {
       this.setMessage();
       if (this.authService.isLoggedIn) {
         const redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/admin';
         this.router.navigate([redirect]).then();
       }
     })
-
-
   }
-  
+
   logout() {
     this.authService.logout();
     this.setMessage();

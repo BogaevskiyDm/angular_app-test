@@ -5,13 +5,15 @@ import { PrasesRoutingModule } from './prases-routing.module';
 import { PhrasesListComponent } from './phrases-list/phrases-list.component';
 import { PhraseDetailsComponent } from './phrase-details/phrase-details.component';
 import { PhraseHomeComponent } from './phrase-home/phrase-home.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [PhrasesListComponent, PhraseDetailsComponent, PhraseHomeComponent],
   imports: [
     CommonModule,
-    PrasesRoutingModule
+    PrasesRoutingModule,
+    FormsModule
   ]
 })
 export class PrasesModule { }
